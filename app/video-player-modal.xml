@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" showingModally="onShowingModally" loaded="onLoaded" class="page bg-primary" backgroundSpanUnderStatusBar="true" xmlns:VideoPlayer="nativescript-videoplayer">
+    <GridLayout class="page-wrap" rows="auto, *">
+
+        <GridLayout row="0" rows="auto" columns="75,*,75" class="action-bar p-10 bg-primary">
+            <Button text="Close" tap="tapClose" row="0" col="0" class="action-item text-left" />
+            <Label text="Videos" col="1" class="action-bar-title text-center" /> 
+        </GridLayout>  
+
+        <ScrollView row="1">
+
+            <StackLayout>
+                <Label text="There should be a REMOTE video below..." class="h2 text-center" textWrap="true"/>
+
+                <VideoPlayer:Video id="nativeVideoPlayer" backgroundColor="green"
+                            controls="true" loaded="onVideoPlayerLoad"
+                            loop="true" autoplay="false" height="250"
+                            src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" />
+
+                <Label text="There should be a LOCAL video below..." class="h2 text-center" textWrap="true"/>
+
+                <VideoPlayer:Video id="nativeVideoPlayer" backgroundColor="green"
+                            controls="true" loaded="onVideoPlayerLoad"
+                            loop="true" autoplay="false" height="250"
+                            src="~/video/big_buck_bunny.mp4" />
+            </StackLayout>
+
+        </ScrollView>
+        
+    </GridLayout>
+</Page>
